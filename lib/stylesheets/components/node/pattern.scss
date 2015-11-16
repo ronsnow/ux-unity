@@ -1,0 +1,134 @@
+// Include the variables.
+@import "../../../partials/utility/variables/*"; 
+
+/*  ***  Custom styles for Patterns section   *** */
+
+article.category-nav  {
+	display:       -webkit-flex;
+	display:           -ms-flexbox;
+	display:            -o-flex;
+	display:               flex;
+	-webkit-justify-content: flex-start;
+	    -ms-justify-content: start;
+        justify-content: 	flex-start;
+	-webkit-flex-wrap:   	wrap;
+        -ms-flex-wrap:   	wrap;
+            flex-wrap:   	wrap;
+    -webkit-align-items: 	flex-start;
+        -ms-align-items: 	start;
+            align-items: 	flex-start;
+	padding:			 	0;
+
+	height: 			auto;
+	margin:         	1em auto;
+	
+	
+	.panel {
+		text-align:   	left;
+		padding:      	0 1em 0 0;
+		max-width:      15em;
+		margin: 		1em  0;
+		-webkit-flex:   1 1 auto;
+	        -ms-flex:   1 1 auto;
+	            flex:   1 1 auto;
+	           
+
+		/* background-color: #80c251; */
+		//background-image: -webkit-linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		//background-image:    -moz-linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		//background-image:      -o-linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		//background-image:         linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		
+		background-repeat: no-repeat;
+		
+		h2    {
+			border: 	 		none;
+			margin:				0.3em  0  0   0;
+			padding:            0;		
+			color:      		$color-link-active;
+			font-size:      	1.1em;
+			padding: 			0;
+			border: 			none;
+			font-family:  		$font-regular;
+		 
+		   a    {
+				color:				inherit;
+			}
+		}
+		.panel-body {
+			//box-shadow:     	0px 1px 4px #e1e1e1, -1px 1px 1px #e1e1e1, 1px 1px 2px #e1e1e1;    // sides R-B-L
+			padding-bottom: 	1em;
+		}
+		ul   {
+			padding-left:       0;
+			li   {
+			    ist-style:       	none;
+				margin-left: 	0;
+				
+			    ul li {
+				    margin-left: 0.5em;
+			    }
+			}
+		}
+	}
+}
+
+/* webpages may have an on page table of contents block consists of  anchors (h2, h3) and this
+ *    defines that page-TOC.   Note that often this is dynamically created by javascript and 
+ *    placed here when it is appropriate.
+ */
+ .page-toc    {
+	 background:     	#ffffff;
+	 border:         	#c7d1d6 thin solid;   // per Rob Nov 2015
+	 margin:     		1em   0;
+	 padding:      		0.4em;
+	 max-width:			15em;
+	 
+	 
+	 h4  {
+		 color:       	$color-block-text;
+		 font-size:		normal;
+		 border:		none;
+		 margin:	    0.2em 0;
+	 }
+	 ul  {
+		 margin: 		0;
+		 padding:		0;
+
+		 li  {
+			 list-style: 	none;
+	
+		     a  {
+				 font-size: 0.9em;
+				 }
+		 }
+	 }
+ }
+ 
+ 
+/* Temporary adjustment to sidebar nav TOC while new TOC logic in process
+ *    Make the TOC scrollable and tighten the padding between topics to show more on page
+*/
+.node-type-pattern   .l-region--sidebar-first,
+.node-type-component .l-region--sidebar-first {
+		
+	h3:hover a,
+	h3.active a {
+		color:          $color-main-title-pattern   !important;
+		font-family:	$font-toc-active;
+	}
+	.treeview  .item-list ul {
+		display:			none;    					// hide toc items initially, display on click via js
+	}
+   .view-display-id-blk_nav_pattern {
+	   ul {
+			overflow-y:			hidden;
+			max-height:			calc(100vh - 200px);
+
+			li {
+			 	padding-bottom:        0.2em     !important;
+		
+			}
+		}
+	}
+}

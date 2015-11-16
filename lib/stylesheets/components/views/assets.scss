@@ -1,0 +1,19 @@
+// Include the variables.
+@import "partials/utility/**/*";
+
+
+
+
+
+	/**  *****  News Events landing page view   *****  **/
+
+.view-id-pages.view-display-id-page_news_events    {
+	
+	li  {
+		padding:         1em 0;
+		
+		.views-field-title {
+			font-size:      1.1em;
+		}
+	}
+}

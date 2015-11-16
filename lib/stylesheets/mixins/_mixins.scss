@@ -1,0 +1,49 @@
+/*  most sass functions and mixins (other than prefix), reside here */
+
+/**
+ * Makes the element a CSS triangle, pointing in the given direction.
+ * Height is optional, if not given, it will be $base/2.
+ */
+@mixin triangle ($direction, $color, $base, $height: 0) {
+	@if $direction == top {
+		$border-side: bottom;
+	} @else if $direction == bottom {
+		$border-side: top;
+	} @else if $direction == left {
+		$border-side: right;
+	} @else  {              // fall thru assuming direction as 'right'
+		$border-side: left;
+	}
+	width: 			0;
+	height: 		0;
+	border: 		$base/2 solid transparent;
+	border-#{$direction}-width: 0;
+	@if $height > 0 {
+		border-#{$border-side}-width: 	$height;
+	}
+	border-#{$border-side}-color: 		$color;
+}
+
+/**
+ * Clear Design argues that because "rem" unit does not work on pseudo-elements in IE,
+ * we should use a function to compute "rem" to "px" with Sass.  Kept here until reassessed.
+ */
+@function rem($remSize) {
+	@return $remSize * $font-size;
+}
+
+
+/**
+ * Button settings are passed a color ($color-primary, $color-button-default, etc.)
+ */
+@mixin button-color($color) {
+	$temp-border-color: 	darken($color, 10%);
+	$temp-text-color: 		$color-button-text;
+	@if lightness($color) < 80 {
+		$temp-text-color: 	$color-button-text-inverted;
+	}
+	background: 	$color;
+	border: 		1px solid $temp-border-color;
+	box-shadow: 	0 $button-shadow-height 0 0 $temp-border-color;
+	color: 			$temp-text-color;
+}

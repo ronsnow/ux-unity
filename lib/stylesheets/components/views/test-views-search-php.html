@@ -1,0 +1,70 @@
+<?php
+/*  **  Output either an avatar or the icon for presentation  ** 
+
+     For Icons, we want to output  the first icon (address multiple) with a icon-avatar class to tie in  CSS formatting.
+     For Patterns, each pattern has its own avatar.
+     For Style Guides, use a default Styles avatar 
+     For Case Study, use a default Case Study avatar 
+     For anything else, use a default misc avatar
+ 
+
+     The resulting avatar should, with the exception of icons, link to the content.  Icons should link to file.
+** */
+
+  $nodetypes_apps   = array('2014_mobileapp', '2014_webapp','mobilepattern', 'webpattern');
+  $nodetypes_style  = array('visual_style', '2014_visual_style');
+  $nodetypes_case   = array('casestudy', '2014_casestudy');
+
+   if ($data->_field_data['nid']['entity']->type  == "icon")  {
+      $icon = $data->_field_data['nid']['entity']->field_icons['und'][0];
+      $output    = "<div class='list-avatar icon-avatar'>";
+      $output   .= "<a href='"  . str_replace("public://", "/sites/default/files/",   $icon['uri']) . "' ";
+      $output   .= " title='"   . $icon['title'] . "' >";
+      $output   .= "<img src='" . str_replace("public://", "/sites/default/files/",   $icon['uri']) . "' ";
+      $output   .= " alt='"     . $icon['title'] . "'  />";
+      $output   .= " </a> </div>";
+   }
+    else 
+    if (in_array($data->_field_data['nid']['entity']->type, $nodetypes_apps ) )  {
+      $avatar = $data->_field_data['nid']['entity']->field_avatar['und'][0];
+      print_r($data->_field_data['nid']['entity']->field_avatar['und']);
+      $output    = "<div class='list-avatar pattern-avatar'>";
+      $output   .= "<a href='"  . str_replace("public://", "/sites/default/files/",   $avatar ['uri']) . "' ";
+      $output   .= " title='"   . $avatar ['title'] . "' >";
+      $output   .= "<img src='" . str_replace("public://", "/sites/default/files/",   $avatar ['uri']) . "' ";
+      $output   .= " alt='"     . $avatar['title'] . "'  />";
+      $output   .= " </a> </div>";
+   }
+    else 
+    if (in_array($data->_field_data['nid']['entity']->type, $nodetypes_case ) )  {
+      $avatar_casestudy_path  = "/sites/default/files/2014/pattern-avatars/avatar_casestudy_225x140.png";
+      $output    = "<div class='list-avatar casestudy-avatar'>";
+      $output   .= "<a href='"  . $avatar_casestudy_path . "' ";
+      $output   .= " title='"   . "Case Study"           . "' >";
+      $output   .= "<img src='" . $avatar_casestudy_path . "' ";
+      $output   .= " alt='Case Study'  />";
+      $output   .= " </a> Case Study</div>";
+   }
+    else 
+    if (in_array($data->_field_data['nid']['entity']->type, $nodetypes_style ) )  {
+      $avatar_visual_style_path  = "/sites/default/files/2014/pattern-avatars/avatar_style_guide_225x140.png";
+      $output    = "<div class='list-avatar style-guide-avatar'>";
+      $output   .= "<a href='"  . $avatar_visual_style_path . "' ";
+      $output   .= " title='"   . "Style Guide"           . "' >";
+      $output   .= "<img src='" . $avatar_visual_style_path . "' ";
+      $output   .= " alt='Style Guide'  />";
+      $output   .= " </a> Style Guide</div>";
+   }
+    else  {
+      $avatar_default  = "/sites/default/files/2014/pattern-avatars/avatar_default_225x140.png";
+      $output    = "<div class='list-avatar style-guide-avatar'>";
+      $output   .= "<a href='"  . $avatar_default . "' ";
+      $output   .= " title='"   . "UI Patterns Misc Content"           . "' >";
+      $output   .= "<img src='" . $avatar_default . "' ";
+      $output   .= " alt='UI Patterns Misc Content'  />";
+      $output   .= " </a> UI Patterns Misc Content</div>";
+   }
+
+
+   print($output);
+?>

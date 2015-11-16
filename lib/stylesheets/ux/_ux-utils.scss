@@ -1,0 +1,67 @@
+/**
+ * Various useful functions used in UX SASS  
+ * 
+ */
+ 
+ /**
+ * Get a selector for all the headings specified
+ */
+@function headings($from:1, $to:6) {
+	$headings: ();
+	@for $i from $from through $to {
+		$headings: $headings, 'h'+$i;
+	}
+	@return ($headings);
+}
+
+/**
+ * Get a selector for all the input types specified
+ */
+@function inputs($types...) {
+	$inputs: ();
+	@each $type in $types {
+		$inputs: $inputs, 'input[type='+$type+']';
+	}
+	@return ($inputs);
+}
+ 
+%force-wrap {
+	// hard force is required for firefox and other finicky browsers, not awesome, but necessary
+	@include word-break('break-all');
+      -webkit-hyphens: auto;
+         -moz-hyphens: auto;
+          -ms-hyphens: auto;
+              hyphens: auto;
+}
+
+%force-break {
+	@include word-break('break-all');
+}
+.force-break {
+	// this is useful for long strings of text that we want to break but don't want hyphenated. like domain names.
+	@extend %force-break;
+}
+
+%break-word {
+	// this will force strings to break between words. it will not hyphenate.
+	word-wrap:  	normal;   		// options: normal, break-word, initial, inherit
+	word-break: 	normal;   		// options: normal, break-all, keep-all, initial, inherit
+}
+
+
+%appearance-normal {
+	-webkit-appearance: normal;   	// not-supported well in all browsers. Options: icon, window, buton, menu, field, normal
+	   -moz-appearance: normal;   	// not-supported well in all browsers
+	margin: 			0;
+	padding: 			0;
+	border: 			none;
+	border-radius: 		0;
+	outline: 			none;
+	box-shadow: 		none;
+	box-sizing: 		content-box;
+	background: 		none;
+
+	&:focus {
+		outline: 		none;
+	}
+}

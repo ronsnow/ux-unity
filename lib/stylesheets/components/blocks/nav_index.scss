@@ -1,0 +1,342 @@
+// Include the variables.
+@import "../../../partials/utility/variables/*"; 
+
+
+
+	/* ** ********   Side bar is fixed  ********  ** */
+	
+
+	.not-front  .l-region--sidebar-first .block {
+		
+		margin: 		0;
+		padding: 		0.5em;
+		//background-color:  #fafafa;
+		//border:  rgba(236,236,236,0.8) solid thin;
+		position: 		fixed;
+		top:   			7.6em;
+		width: 			15%;
+		max-width: 		13em;
+		overflow-y: 	auto;
+		height: 		calc(100vh - 170px);
+		
+		h2  {
+			display:    	none;
+		}
+			
+		h3  {
+			font-family:  $font-regular;
+			font-size:    1rem;
+			font-weight:  700;
+			cursor:       pointer;
+			color:        #667785;   // non-standard color, only used here
+			
+			a {
+				color:    inherit;
+			}
+			&.active,
+			a:hover {
+				color:    		$color-active;
+				font-family:    $font-toc-active;
+				font-weight:	normal;
+			}
+		}
+
+		
+		ul {
+			line-height:    1.1em;
+			white-space: 	normal;
+			font-family:    $font-regular;
+			list-style:   	none;
+			padding:        0;
+			margin-bottom:  0;		
+			li {
+				overflow: 		visible;
+				line-height:    1.3em;
+				padding:        0  0  0.9em  0;
+			}
+			li    a  {
+				color: 		 	#667785;   // non-standard color, only used here
+				font-family:    $font-regular;
+	            font-size:      1rem;
+			}
+			li    a.active,
+			li    a:hover    {
+				color: 		 	$color-active;
+				font-family:    $font-toc-active;
+			}
+		}
+				
+		.more-link     {
+			font-style:     italic;
+			font-size:      0.8em;
+			
+		}
+	}
+
+
+/*   ***  special Sidebar overrides for PATTERN and COMPONENTS ONLY    ***  */
+.node-type-pattern.not-front,
+.node-type-component.not-front  {
+	.l-region--sidebar-first .block {
+		top:   			6.6em;    // just a bit higher for Patterns
+		ul {
+
+			li {
+				margin-left:    0.66em;
+			    a  {
+					color: 		 	#667785;   // non-standard color, only used here
+					font-family:    $font-regular;
+		            font-size:      0.95em;
+		            &:hover,
+		            &:active,
+		            &.active    {
+			            font-family: $font-toc-active;
+		            }
+		        }
+			}
+
+		}
+	}
+}
+
+/* ======  Color Overides  +++++ */
+.node-type-style  {
+	.l-region--sidebar-first .block  {
+		li    a.active,
+		li    a:hover    {
+			 color:				$color-main-title-style  !important;
+		}
+	}
+}
+
+.node-type-design,
+.node-type-news-item    {
+	.l-region--sidebar-first .block  {
+		li    a.active,
+		li    a:hover    {
+			 color:				$color-main-title-design   !important;
+		}
+	}
+}
+
+.node-type-pattern,
+.node-type-component    {
+	.l-region--sidebar-first .block  {
+		li    a.active,
+		li    a:hover    {
+			 color:				$color-main-title-pattern   !important;
+		}
+	}
+}
+
+
+
+
+// Desktops/laptops in a normal window size
+//  @media only screen and (min-width: 860px) and (max-width: 1389px) {  // DONT USE THIS QUERY - SIZE IS NOW FIXED  Left here for ref
+
+ 	.l-region--sidebar-second {
+		display:        inline-block;
+		padding:  	    0 0 1ex 1ex;
+		position:		fixed;
+		right: 			0px;
+		background: 	rgba(255,255,255, 0.9);
+		color: 			#333;
+		border:			#bbb solid thin;
+		top:			140px;
+		overflow-x:		hidden;
+		overflow-y: 	scroll;
+		z-index:		150;
+	}
+	.l-region--sidebar-second h2{
+		-webkit-transition:	all .7s;
+		-mos-transition:	all .7s;
+		-ms-transition:    	all .7s;
+		-o-transition:    	all .7s;
+		transition:  	  	all .7s;
+	}
+	.vertical {
+		display:			inline-block;
+		-webkit-transform: 	rotate(90deg);	/* Safari/Chrome */
+		-moz-transform: 	rotate(90deg);	/* Firefox */
+		-ms-transform: 		rotate(90deg);	/* IE */
+		-o-transform: 		rotate(90deg); /* Opera */
+		transform: 			rotate(90deg);  
+		filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);	/* Internet Explorer */
+		-webkit-transition:	all .7s;
+		-mos-transition:	all .7s;
+		-ms-transition:    	all .7s;
+		-o-transition:    	all .7s;
+		transition:  	  	all .7s;
+	}
+	.expand-index .block__content {
+		margin-top:   		0;
+	}
+	.collapse-index .block__content {
+		margin-top:   		-1200px;
+	}
+	
+	
+	.expand-index h2 {
+		border:				none;
+		margin:				0;
+		display:			inline-block;
+		-webkit-transform: 	rotate(0deg);	/* Safari/Chrome */
+		-moz-transform: 	rotate(0deg);	/* Firefox */
+		-ms-transform: 		rotate(0deg);	/* IE */
+		-o-transform: 		rotate(0deg); /* Opera */
+		transform: 			rotate(0deg);  
+		filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);	/* Internet Explorer */
+	}
+	.collapse-index h2 {
+		border:			#bbb solid thin;
+		padding:        .2em .2em 0 .2em;
+		display:			inline-block;
+		display:			inline-block;
+		-webkit-transform: 	rotate(90deg);	/* Safari/Chrome */
+		-moz-transform: 	rotate(90deg);	/* Firefox */
+		-ms-transform: 		rotate(90deg);	/* IE */
+		-o-transform: 		rotate(90deg); /* Opera */
+		transform: 			rotate(90deg);  
+		filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);	/* Internet Explorer */
+	}
+	
+ 	.l-region--sidebar-second.expand-index {
+		min-width: 		205px;
+		max-width:      250px;
+		width:			250px;
+		height:			auto;
+		min-height: 	25px;
+		max-height:		calc(100% - 142px);
+		border:			#bbb solid thin;
+	}
+ 	.l-region--sidebar-second.collapse-index {
+		min-width: 		25px;
+		max-width:      40px;
+		width:			40px;
+		height:			62px;
+		border:			none;
+	}
+	
+	#block-quicktabs-nav-index .block__content {
+		-webkit-transition:	all .7s;
+		-mos-transition:	all .7s;
+		-ms-transition:    	all .7s;
+		-o-transition:    	all .7s;
+		transition:  	  	all .7s;
+	}
+	#block-quicktabs-nav-index h2:hover  {
+		color:       		white;
+		background-color:	#FC6
+	}
+	#XX.block-quicktabs-nav-index h2:hover~.block__content {
+		width:    auto;
+	}
+// }
+
+// Desktops/laptops using extra-wide window orientation
+@media only screen and (min-width: 1390px) {
+
+ 	.l-region--sidebar-second {
+		display:		block;
+		min-width: 		205px;
+		max-width:      250px;
+		position:		fixed;
+		right: 			calc((100% - 1360px) /2);
+		background: 	rgba(255,255,255, 0.9);
+		color: 			#333;
+		border:			none;
+		top:			140px;
+		overflow-x:		hidden;
+		overflow-y: 	scroll;
+		z-index:		150;
+	}
+	.l-page              {
+		max-width:      $max-width;
+	}
+	.l-main              {
+		max-width:      $max-width;
+	}
+}
+
+
+
+/* Navigation Index panel   */
+#block-quicktabs-nav-index-NOOP {
+	
+	width: 			250px;
+	max-height:		75%;
+	position:		fixed;
+	right: 			0px;
+	background: 	rgba(255,255,255, 0.9);
+	color: 			#333;
+	border:			#bbb solid thin;
+	top:			140px;
+    overflow-x:		hidden;
+    overflow-y: 	scroll;
+	z-index:		150;
+	
+	/*Some cool shadow and glow effect*/
+	box-shadow: 	0 4px 10px 1px rgba(0, 0, 0, 0.6), 
+					0 0 200px 1px rgba(255, 255, 255, 0.5);
+}
+ul.quicktabs-tabs.quicktabs-style-sky li, 
+ul.quicktabs-tabs.quicktabs-style-sky li.active, 
+ul.quicktabs-tabs.quicktabs-style-sky li.active a  {
+	margin-top: 	0       !important;
+	height:			2.65em  !important;
+	min-height:     2.65em  !important;
+	line-height: 	2.95em  !important;
+	text-indent: 	.3em;
+}
+.quicktabs_main.quicktabs-style-sky {
+	border:         none;
+}
+
+#block-quicktabs-nav-index h2 {
+	z-index:		151;
+}
+
+
+
+
+.front .l-region--sidebar-second {
+	visibility:   		hidden;
+	display:			none;
+}
+
+
+#tocSearch {
+	background:  			#F6F9FB url(../images/search-icon.png) 3px 3px no-repeat;
+	text-indent: 			1.6em;
+	max-width:   			170px;
+	width:		 			170px;
+	margin:   				0.6em  0  0.4em  0;;
+	border: 				1px solid #aaa;
+	-moz-border-radius:   	4px;
+ 	-moz-outline-radius:  	4px;
+ 	-webkit-border-radius:	4px;
+	border-radius: 		  	4px;
+	outline-width: 			0;
+}
+#tocSearchSubmit { 
+    display:  				none;
+	cursor:         		pointer;
+	vertical-align: 		text-bottom;
+	border-top:     		#999 solid 1px;
+	height:         		13px;
+	border: 				1px solid #aaa;
+	-moz-border-radius: 	7px;
+ 	-moz-outline-radius:	7px;
+ 	-webkit-border-radius: 	7px;
+	border-radius: 			7px;
+}
+.highlight { 
+	   color: 				blue !important;
+       text-decoration: 	none !important;
+       text-weight:  		bold;
+       background-color: 	$color-highlight; /*    #ee4;   */
+       margin-left:  		-0.3em;
+       padding-left:  		0.3em;
+}
+

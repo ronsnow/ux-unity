@@ -1,0 +1,71 @@
+
+
+.ux-dropdown-grp {
+	position: 				relative;
+	float:					left;
+	min-height: 			1px;
+	outline:				none;
+	padding-left: 			1em;
+	padding-right: 			1em;
+	
+	.ux-dropdown-content  {
+		background: #e6e6e6;
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#ffffff));
+		background-image: -webkit-linear-gradient(top, #e6e6e6, #ffffff);
+		background-image:      -o-linear-gradient(top, #e6e6e6, #ffffff);
+		background:          -moz-linear-gradient(top, #e6e6e6, #ffffff);
+		/* FF3.6+ */
+		 -ms-filter:       "progid:DXImageTransform.Microsoft.gradient(startColorStr='#e6e6e6', EndColorStr='#ffffff')";
+		background-image:  -webkit-linear-gradient(bottom, #e6e6e6, #ffffff);
+		background-image:          linear-gradient(to top, #e6e6e6, #ffffff);
+		border-radius: 		3px;
+		border: 			1px solid #d0d0d0;
+		cursor: 			pointer;
+		outline: 			none;
+		position: 			relative;
+		width: 				100%;
+		margin: 			0 auto;
+		padding: 			9px 15px;
+		line-height: 		10px;
+		
+		.current-selection    {
+			font-size: 			0.875rem;
+			color: 				#666666;
+		}
+		ul  {
+			position: 		absolute;
+			display:		none;   							// display on hover
+			top: 			2em;
+			left: 			0;
+			right: 			0;
+			background: 	white;
+			border-radius: 	inherit;
+			border: 		1px solid #d0d0d0;
+			box-shadow: 	0 1px 3px 0px #888;
+			font-weight: 	normal;
+			list-style: 	none;
+			pointer-events: none;
+			margin: 		0;
+			max-height: 	350px;
+			overflow: 		auto;
+			padding-bottom: 0.66em;
+			padding-top: 	0.66em;
+			
+			li {
+				padding: 	0px 20px;
+				line-height: 30px;
+				font-size: 	0.875rem;
+				position: 	relative;
+			}
+			li.separator  {
+				border-top: dotted 1px #333333;
+			}
+			li:hover  {
+				background-color: #e1f2f7;
+			}
+			&:hover {
+				display:  	block;
+			}
+		}
+	}  //ux-dropdown-content
+}  //ux-dropdown-grp

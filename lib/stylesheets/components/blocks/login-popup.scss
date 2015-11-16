@@ -1,0 +1,15 @@
+// Include the variables.
+@import "../../../partials/utility/variables/*"; 
+
+#modalContent .ctools-modal-content.modal-forms-modal-content {
+	width:  			310px !important;
+	height:  			440px !important;
+	font-size:            .95em;
+}
+#modalContent .modal-content.popups-body  {
+	width:				302px !important;
+	height:				auto  !important;
+}
+#modalContent .modal-content.popups-body div.messages.messages--error {
+	font-size:            .9em;
+}

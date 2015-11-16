@@ -1,0 +1,398 @@
+// Include the variables.
+@import "../../../partials/utility/variables/*"; 
+
+
+/*  *****  GLOBAL for all nodes   (not front)   *****  */
+.not-front ul.bullet li    {
+	list-style: disc;
+	list-style-position: outside;
+}
+	
+	
+	/*  *****  for SPECIFIC  nodes   *****  */
+.node-type-page.not-front,
+.node-type-news-item.not-front,
+.node-type-pattern.not-front,
+.node-type-style.not-front,
+.node-type-component.not-front,
+.node-type-page.not-front,
+.node-type-blog.not-front,
+.page-blog.not-front,
+.page-blog1,
+.page-search,
+.page-search1         {
+	
+	#main-content-wrapper   {
+		margin-left:        15em;
+		max-width:          calc(98% - 15em);
+		display:			block;
+		vertical-align:     top;
+		padding:            0;
+	}
+    aside.l-region--sidebar-first {    			// See the nav_index.scss file for main side bar styles
+	    position:    		relative;
+		left:				1%;
+		width:              17%;
+    }
+
+	#main-content-wrapper h4   {
+		font-style:           $font-regular;
+		font-size:			  1.1rem;
+		line-height:		  1.2rem;
+		border-bottom:        $color-separator-line thin solid;
+		margin-bottom:        0.5em;
+	}
+
+	#main-content-wrapper h5   {
+		font-style:     	$font-regular;
+		font-size:			  1rem;
+		line-height:		  1.1rem;
+		border-bottom:        $color-separator-line thin solid;
+		margin-bottom:        0.5em;
+	}
+		
+	.back2top-wrapper    {
+		position: 			relative;
+		right: 				0;
+		top:				-8em;
+		font-size:			0.75em;
+		z-index:            3;
+		background: 		transparent;
+		width: 				1px;
+		height: 			1px;
+		display:			block;
+	}
+
+}
+
+
+
+
+
+.front #main-content-wrapper  {  // there is no sidebar on front page, don-t allocate it
+	padding:           0;
+}
+
+:not(.front) {
+	#main-content-wrapper .flexbox   {
+		display:       -webkit-flex;
+		display:           -ms-flexbox;
+		display:            -o-flex;
+		display:               flex;
+		-webkit-justify-content: space-between;
+		    -ms-justify-content: justify;
+	        justify-content: 	space-between;
+		-webkit-flex-wrap:   	wrap;
+	        -ms-flex-wrap:   	wrap;
+	            flex-wrap:   	wrap;
+		padding:			 	0;
+
+		height: 			auto;
+		margin:         	1em auto;
+
+
+		> div       {
+			text-align:   	left;
+			padding:      	0 1em 2em 0;
+			min-width:      14em;
+			margin: 		1em  1em  1em  0;
+			-webkit-flex:   1 1 0;
+		        -ms-flex:   1 1 0;
+		            flex:   1 1 0;
+		}
+		
+		h4  {
+			font-size: 		1.2rem;
+			line-height: 	1.3rem;
+			font-family:	$font-light;
+			color:          $color-h4;
+			border-bottom: 	1px solid #DDDDDD;
+			padding-bottom: 5px;
+			margin-bottom: 	0.9em;
+			margin-top:     0;
+		}
+		
+	}
+    
+    
+    .submitted  {
+	    color:          	$color-submitted;
+	    font-style:     	italic;
+	    font-size:			smaller;
+    }
+    
+	.example-box {
+		border: 			1px solid #e4e2e1;
+		display: 			block;
+		padding: 			24px;
+		position: 			relative;
+		margin-top: 		24px;
+		border-radius: 		0 8px 0 0;
+	
+	    &::before {
+		    content: 		'Example';
+			font-weight: 	700;
+			text-transform: uppercase;
+			font-size: 		80%;
+			display: 		inline-block;
+			background: 	white;
+			padding: 		0 6px;
+			position: 		absolute;
+			top: 			-9px;
+			left: 			7px;
+	    }
+	    
+	    example-box-item {
+		    clear:    		both;
+		    padding:    	0    1em;
+	    }
+	}
+	.example-code {  // assumes that the prior '.example-box' is used in conjunction
+	    &::before {
+		    content: 		'Code';
+	    }
+	}
+	.example-box-title { 	// default to 'Rewriten' this connects with Javascript OnLoad to change titles dynamically
+		&::before {
+			content:        'Rewritten';
+			content:        attr(data-title);
+	
+		}
+	}
+	
+	
+	/* pattern for grouping a set of boxes together in a fluid manner for responsive  */
+	.cols-group  {
+		width:				100%;
+		padding:			0;
+		margin:				0;
+		
+		.cols,
+		.cols-2,            			// cols-2 is  overriden below to allow 2 cols instead of 3
+		.cols-3    {
+			display:		inline-block;
+			margin:      	1%;
+			padding:		0.3em  1%  0.8em;
+			text-align:		left;
+			max-width:		28%;
+			min-width:		10em;
+			vertical-align: top;
+			
+			h2   {
+				font-size:  1.9em;
+				margin:		0;
+				padding:    0;
+				
+				a {
+					color:  		 inherit;
+					text-decoration: none;
+				}
+			}
+			
+			p   {
+				font-size:   1em;
+				line-height: 1.3em;
+			}
+			
+			img   {
+				margin:  0;
+				padding: 0;
+			}
+		}
+		
+		/*  Override to allow for 2 columns instead of 3   */
+		.cols-2    {
+			max-width:		47%;
+			min-width:      40%;
+		}
+		
+		
+	}
+	
+	.list-block-group    {
+		margin:  			1em 0 0 0;
+		padding: 			0;
+		display:			block;
+		
+		section    {
+			margin:        1em 0;
+			
+			div  {
+				display:  	inline-block;
+				height:		100px;
+				width:		100px;
+				padding:	0.3em;
+			}
+
+			div:nth-child(1)  {
+				vertical-align: bottom;
+			}
+
+			div:nth-child(2)  {
+				width:		35em;
+				height:		100px;
+				
+				h3 {
+					margin:  0.7em 0 0 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+
+article.card-group  {
+	display:       -webkit-flex;
+	display:           -ms-flexbox;
+	display:            -o-flex;
+	display:               flex;
+	-webkit-justify-content: flex-start;
+	    -ms-justify-content: start;
+        justify-content: 	flex-start;
+	-webkit-flex-wrap:   	wrap;
+        -ms-flex-wrap:   	wrap;
+            flex-wrap:   	wrap;
+    -webkit-align-items: 	flex-start;
+        -ms-align-items: 	start;
+            align-items: 	flex-start;
+	padding:			 	0;
+
+	height: 			auto;
+	margin:         	1em auto;
+	
+	
+	.card {
+		text-align:   	left;
+		padding:      	0 1em 2em 0;
+		max-width:      15em;
+		margin: 		0;
+		-webkit-flex:   1 1 auto;
+	        -ms-flex:   1 1 auto;
+	            flex:   1 1 auto;
+	           
+
+		/* background-color: #80c251; */
+		//background-image: -webkit-linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		//background-image:    -moz-linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		//background-image:      -o-linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		//background-image:         linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		
+		background-repeat: no-repeat;
+		
+		h2    {
+			border: 	 		none;
+			margin:				0.2em  0  0.4em  0;
+			padding:            0;		
+			color:      		$color-link-active;
+			font-size:      	1.33em;
+			padding: 			0;
+			border: 			none;
+			font-family:  		$font-regular;
+		 
+		   a    {
+				color:			inherit;
+			}
+		}
+		.card-body {
+			border:       		$color-card-border thin solid;
+			padding: 			0.2em 1em 1em 1em;
+		}
+		ul   {
+			padding-left:       0;
+		}
+		li   {
+			list-style:       	none;
+			margin-left:        1em;
+		}
+	}
+}
+
+
+article.cell-group  {
+	display:       -webkit-flex;
+	display:           -ms-flexbox;
+	display:            -o-flex;
+	display:               flex;
+	-webkit-justify-content:space-between;
+	    -ms-justify-content:justify;
+        justify-content: 	space-between;
+   	-webkit-flex-wrap:   	wrap;
+        -ms-flex-wrap:   	wrap;
+            flex-wrap:   	wrap;          
+	padding:			 	0;
+
+	height: 			auto;
+	margin:         	1em auto;
+	
+	
+	.cell {
+		text-align:   	left;
+		padding:      	0 1% 1em 0;
+		max-width:      16em;
+		margin: 		0;
+		-webkit-flex:   1 1 auto;
+	        -ms-flex:   1 1 auto;
+	            flex:   1 1 auto;
+	           
+
+		/* background-color: #80c251; */
+		//background-image: -webkit-linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		//background-image:    -moz-linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		//background-image:      -o-linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		//background-image:         linear-gradient(top, #80c251 0,  #80c251 34px, #fff 35px, #fff 100%);
+		
+		background-repeat: no-repeat;
+		
+		h2    {
+			border: 	 		none;
+			margin:				0.2em  0  0.1em  0;
+			padding:            0;		
+			color:      		$color-link-active;
+			font-size:      	1.33em;
+			padding: 			0;
+			border: 			none;
+			font-family:  		$font-regular;
+		 
+		    a    {
+				color:			inherit;
+			}
+		}
+
+		
+		h3    {
+			margin:				0.2em  0  0.3em  0;
+			padding:            0;		
+			font-size:      	1.2em;
+			font-weight:		100;
+			line-height: 		1.8em;
+			padding: 			0;
+			border: 			none;
+			font-family:  		$font-regular;
+		 
+		    a    {
+				color:			inherit;
+			}
+		}
+
+
+
+
+		.cell-body {
+			border:       		none;
+			padding: 			0.2em   1%   0.5em ;
+			
+			p  {
+				line-height:    1.3em;
+				margin-top:     0;
+			}
+		}
+		ul   {
+			padding-left:       0;
+		}
+		li   {
+			list-style:       	none;
+			margin-left:        1em;
+		}
+	}
+}

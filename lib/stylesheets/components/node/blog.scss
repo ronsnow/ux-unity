@@ -1,0 +1,75 @@
+// Include the variables.
+@import "../../../partials/utility/variables/*"; 
+.comment-form  {
+	.form-item-homepage   {
+		display:					none;
+	}
+}
+
+.comment  {
+	footer.comment__info    .permalink {
+		display:					none;
+	}
+	.comment__submitted  {
+		margin: 					0;
+		padding:					0;
+		line-height: 				1.2em;
+	}
+	ul.links.links--inline.comment__links {
+		margin-top:					-1.5em;
+		margin-bottom:				0.8em;
+	}
+}
+  
+	.page-blog .view-id-blogs,
+	.view-blogs.view-display-id-pg_blog_list1    {
+		li.blog-list {
+			font-size:  		1.2em;
+			margin:				2.3em 0 0 0;
+			clear:				both;
+			display:			block;
+			
+			.views-field-title  {
+				display:		block;
+				padding:		0.4em 0 0.3em 0;
+			}
+
+			.views-field-picture  {
+				width:			4.5em;
+				height:			4.5em;
+				overflow:		hidden;
+				border-radius:  50%;
+				float:			left;
+				margin:			0.2em  1em  3em  0;
+			}
+
+			
+			.views-field-field-name-last  {
+				font-size:			0.8em;
+				font-style:			italic;
+				color:				lighten($color-body-text, 15%);
+			}
+			.views-field-body   {
+				height:				auto;
+				max-height:         none;
+				padding:			0.3em 0 0 0;
+			}
+
+		}
+
+		li.blog-list:first-child {
+			margin-top:			1.3em;
+		}
+	}
+	
+	/*  individual blog node */
+	.node-type-blog  article.node--blog {
+		.user-picture {
+			width: 				5em;
+			height: 			5em;
+			border-radius: 		50%;
+			margin:				0  1em  1em  0;
+			float:				left;
+			overflow: 			hidden;
+		}
+	}

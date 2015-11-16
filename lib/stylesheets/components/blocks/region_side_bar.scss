@@ -1,0 +1,106 @@
+// Include the variables.
+@import "../../../partials/utility/variables/*"; 
+
+// Desktops/laptops in a normal window size
+//  @media only screen and (min-width: 868px) and (max-width: 1389px) {  // DONT USE THIS QUERY - SIZE IS NOW FIXED  Left here for ref
+
+.right-bar-wrapper {
+	float: 		right;
+	height: 	1px;
+	position: 	fixed;
+	top: 		180px;
+	width: 		100%;
+	z-index: 	800; 
+}
+.right-bar  {
+	color: 		white;
+	transition: all 0.2s linear;
+	background: linear-gradient(to right, #0095d3 0%, #007fb4 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border-radius: 4px 0 0 4px;
+	box-shadow: 0 5px 15px #000;
+	color: 		#fff;
+	cursor: 	pointer;
+	float: 		right;
+	height: 	90px;
+	padding: 	8px 10px;
+	opacity: 	0.3; 
+}
+
+.l-region--sidebar-second {
+	display:        inline-block;
+	padding:  	    0 0 1ex 1ex;
+	position:		fixed;
+	right: 			0px;
+	background: 	rgba(255,255,255, 0.9);
+	color: 			#333;
+	border:			#bbb solid thin;
+	top:			140px;
+	overflow-x:		hidden;
+	overflow-y: 	scroll;
+	z-index:		150;
+}
+.l-region--sidebar-second h2{
+	-webkit-transition:	all .7s;
+	-mos-transition:	all .7s;
+	-ms-transition:    	all .7s;
+	-o-transition:    	all .7s;
+	transition:  	  	all .7s;
+}
+
+
+
+
+
+.l-region--sidebar-first  {
+	max-width:		205px;
+	min-width:		160px;
+	width:      	18%;
+	vertical-align: top;
+	float:     		left;
+	margin-right:   1%;
+	overflow:		hidden;
+	white-space:	nowrap;
+	margin-bottom:  1.5em;
+    display:        inline-block;
+}
+.l-region--sidebar-first .block{
+	margin-bottom:   2.2em;
+}
+
+
+
+@media only screen and (max-width: $width-mid) {
+		
+	.l-region--sidebar-first {
+		float: 				none;
+		display: 			block;
+		position: 			absolute;
+		left: 				-166px;
+		top:        		130px;
+		-webkit-transition: all 1s;
+		transition: 		all  1s;
+		border: 			rgba(22,222,22,.5) solid 6px;
+		padding: 			0;
+		margin: 			0;
+		box-shadow: 		0.4em 0.0em;
+		color: 				rgba(243, 243, 243, 0.8);
+		width:				6px;
+		max-width:			6px;
+		cursor:     		pointer;
+		z-index:    		111;
+		background-color:   white;
+	 }
+
+		
+	.l-region--sidebar-first:hover,
+	.l-region--sidebar-first:focus {
+		left:  		5px;
+		border: 	rgba(222,222,222,.5) thin solid;
+		padding: 	.8em;
+		margin: 	.8em .8em .8em 0;
+		box-shadow: 0.4em 0.4em;
+		color: 		rgba(242,242,242, .8);
+		width:  	205px;
+	 }
+	 
+}

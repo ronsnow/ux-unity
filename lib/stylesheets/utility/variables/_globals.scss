@@ -1,0 +1,31 @@
+/**
+ * Global parameters. Every measure, color, ... should be relative to those,
+ * so that the design stayed coherent if we change one of these values.
+ *
+ * The following are based on Unity visual specifications for VMware.
+ * Using the box model aspects of spacial measures for separation of main
+ * html tags that are consistent across Unity.
+ */
+
+
+body  {  
+	background:    	$color-body-bg;
+}
+
+
+
+.clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+.invisible {
+	visibility: hidden;
+}

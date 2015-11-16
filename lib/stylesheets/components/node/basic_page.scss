@@ -1,0 +1,42 @@
+// Include the variables.
+@import "../../../partials/utility/variables/*"; 
+
+
+
+#vue-topics {
+	
+	img {
+		width:  		1.7em;
+		height: 		1.7em;
+		padding-right: 	1em;
+		display: 		inline-block;
+		vertical-align: middle;
+	}
+	h3  {
+		display: 		inline-block;
+		vertical-align: middle;
+	}
+	.card  {
+			min-width:  25em;
+			width:      48%;
+			max-width:  98%;
+		
+		.card-body  {
+			border:     none;
+		}
+	}
+}
+
+/* *******************   Media Queries   ********************** */
+@media only screen 
+  and (max-width: 840px)  { 
+	#vue-topics {
+	
+		.card  {
+			min-width:  25em;
+			width:      48%;
+			max-width:  98%;
+		}
+	}
+
+}

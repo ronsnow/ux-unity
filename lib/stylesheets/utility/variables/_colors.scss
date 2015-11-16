@@ -1,0 +1,144 @@
+
+// Global Variables  -- From Unity Blue
+//==================================================
+
+//== Unity "Blue" Theme Color Palette
+// --------------------------------------------------
+//## Do NOT use these varible names, but instead use the
+//## varible names that follow this section.  (here for reference)
+
+$light-grey:        #f5f7f8;
+$light-grey-10:     #f0f3f5;
+$light-grey-20:     #ebeff1;
+$light-grey-30:     #d7dee2;
+$light-grey-40:     #c7d1d6;
+$light-grey-50:     #b2c0cc;
+
+$medium-grey:       #91a0aa;
+$medium-grey-10:    #697785;
+$medium-grey-20:    #586877;
+
+$dark-grey:         #44535f;
+$dark-grey-10:      #414b57;
+$brand-grey:        #717074;
+
+$light-green:       #e9f4e2;
+$light-green-10:    #daeccf;
+$light-green-20:    #dcf5be;
+$green:             #6db33f;
+$medium-green:      #5e9e41;
+$dark-green:        #339900;
+
+$light-orange:      #ffedb2;
+$orange:            #f8981d;
+$dark-orange:       #cc6600;
+
+$light-blue:        #cbe5ff;
+$light-blue-10:     #98cbff;
+$light-blue-20:     #aac5e1;
+$blue:              #5384c0;
+$blue-10:           #4a7db1;
+$blue-20:           #4679b9;
+$medium-blue:       #3a87c5;
+$medium-blue-10:    #0095d3;
+$dark-blue:         #0066cc;
+
+//== Global Colors
+// --------------------------------------------------
+//## Common colors for components
+
+
+
+
+
+
+
+
+
+
+				
+
+// Below are using naming convention of 'color-' prefix
+// These are the variable names to be used throughout SASS
+// and are arranged alphabetically (more or less)
+
+$color-primary:  	 			#1f9cda;   	
+$color-active: 	 	 			#0095d3;   
+$color-aside-block:				#148cc7;	
+$color-block-text:	 			#697785;	
+$color-block-title:  			#697785;		
+$color-body-text:    			#697785;					//  $medium-grey-10		
+$color-body-bg:                	#ffffff !default;		  	//** Background color for `<body>`.
+$color-brand-primary:           $dark-blue;					//** Brand color overrides
+$color-button-default:  		$light-grey-30;				
+$color-button-primary:  		$light-blue;		
+$color-button-text-inverted: 	#ffffff;			
+$color-button-text: 			#555555;	
+$color-card-border:				#b2c0cc;					//** $light-grey-50	
+$color-content-title:  			#006699;		
+$color-disabled-state:			#ebeff1;		
+$color-divider:					#cccccc;
+$color-error:           		#de5251;			
+$color-footer-bg: 				transparent;		
+$color-h4:              		#148cc7;				
+$color-heading-text: 			#44535f;					// dark-grey	
+$color-hero-subtext: 			rgba(104, 119, 133, 0.8);		
+$color-hero-title:   			#3a87c5;		
+		
+$color-masthead-bg:   			#3a87c5;					// medium-blue
+$color-masthead-bg-pattern:     #836DB8;   			        // was medium-blue-10
+$color-masthead-bg-design:   	#f8981d;					// orange	
+$color-masthead-bg-style:   	#6db33f;					// green	
+
+$color-main-title-design:		#f8981d;					// orange	used for Page titles
+$color-main-title-style:		#6db33f;					// green	used for Page titles
+$color-main-title-pattern:		#836DB8;  //#0095d3;	   medium-blue-10	used for Page titles
+
+
+$color-highlight:				#E9F4E2;	
+$color-hover-state: 			#39f4e2;		
+$color-hover: 	 	 			#85BAD9;
+$color-info: 	 	 			$light-blue-10;
+
+
+//** Global link text colors
+$color-link:              		$dark-blue;
+$color-link-hover:        		darken($color-link, 10%);
+$color-link-active:       		$medium-blue-10;
+
+$color-menu-text:	 			#ffffff;	
+$color-nav-category:			#333333; 		
+$color-nav-index:   			#006699;
+
+$color-primary-hover-bg:        $light-green;				//** Background color of selection bar on white background, as in
+$color-primary-active-bg:       $light-green-10;			//**            actions menu, datagrid row, dropdown item, list box item, tree item
+$color-primary-hover:     		$medium-grey-20;			//** Text color of selection bar on white background, as in
+$color-primary-active:    		$color-primary-hover;		//**      actions menu, datagrid row, dropdown item, list box item, tree item
+$color-primary:					#1f9cda;	
+
+	
+$color-selected-state:			#daeccf;		
+$color-separator-line: 			#e8e8e8;	
+
+$color-secondary-hover-bg:      $light-blue-20;				//** Background color of selection bar on grey backgrounds, as in
+$color-secondary-active-bg:     $blue-10;					//**            object navigator, tree item in an object navigator
+$color-secondary-hover:   		$color-primary-hover;  		//** Text color of selection bar on grey backgrounds, as in
+$color-secondary-active:  		#fff;						//**      object navigator, tree item in an object navigator
+	
+$color-side-nav-text:  			#898989;
+$color-site-name:  				white; 
+$color-spinner-tip:				$medium-blue-10;		
+$color-submitted:       		#898989;
+$color-text-disabled:      		$light-grey-30;	 			//** Global 'disabled' text color
+$color-text-side-nav: 			#898989; 			
+$color-success:         		#de5251;		
+$color-warn:      				$light-orange;	
+
+//  testing
+
+$light-grey:        #f5f7f8;
+$light-grey-10:     darken($light-grey, 1%);
+$light-grey-20:     darken($light-grey, 2%);
+$light-grey-30:     darken($light-grey, 3%);
+$light-grey-40:     darken($light-grey, 4%);
+$light-grey-50:     darken($light-grey, 5%);

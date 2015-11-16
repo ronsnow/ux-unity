@@ -1,0 +1,63 @@
+// Include the variables.
+@import "partials/utility/**/*";
+
+/*  ****         Taxonomy Term Views                 ****  */
+
+.page-taxonomy-term {
+	.views-view-grid  tr {
+		height:             160px;
+	}
+	.views-view-grid  tr td {
+		width:             140px;
+		padding-right:      10px;
+	}
+	.views-field-title {
+		height:             2em;
+		text-decoration: 	none;
+		font-weight: 		100;
+		display: 			block;
+		padding:			0;
+		line-height: 		1.1em;
+	}
+	.views-field-field-images {
+		margin:             0;
+		padding:			0;
+		vertical-align:		top;
+		width:				100px;
+		height: 			100px;
+		display:			block;
+		background-color:   #f8f8f8;
+	}
+	.views-field-field-images a{
+		line-height:         100px;
+		vertical-align:		bottom;
+	}
+	.views-field-field-images img{
+		vertical-align:		bottom;
+		max-width:			100px;
+		max-height: 		100px;
+	}
+	.views-field-php {
+		text-decoration: 	none;
+		font-weight: 		100;
+		font-size:			.8em;
+		padding:			0  0 .8em 0;
+		height:				.9em;
+		line-height:        .4em;
+	}
+	
+}
+
+
+
+
+
+
+/**  *****    taxonomy Vocabulary focus  *****  **/
+
+.page-admin-structure-taxonomy {
+	#main-content-wrapper .tabs.tabs--primary li:nth-child(3),
+	#main-content-wrapper .tabs.tabs--primary li:nth-child(4) {
+		display:             none;
+	}
+}

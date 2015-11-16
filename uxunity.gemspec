@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ron Snow"]
   spec.email         = ["ronsnow-gem@menloworld.com"]
   spec.summary       = %q{VMware Unity theme assets for SASS.}
-  spec.descripton    = %q{VMware Unity theme assets for SASS as a compass extension.}
+  spec.description   = %q{VMware Unity theme assets for SASS as a compass extension.}
   spec.homepage      = "https://github.com/ronsnow/ux-unity"
   spec.license       = "MIT"
 
@@ -30,4 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
 
   spec.add_dependency "compass"
+  spec.add_dependency "sass-globbing"
 end

@@ -1,0 +1,179 @@
+// Include the variables.
+@import "../../../partials/utility/variables/*"; 
+
+
+
+	/*  ****  various Logged in and out Menu Styling       ****  */
+	/*  Note: adjustement for misspelling of visitor             */
+	#block-menu-menu-vistor-menu h2,
+	#block-menu-menu-visitor-menu h2   {
+		visibility:     hidden;   
+		display:       none;
+	}
+
+	#block-menu-menu-vistor-menu,
+	#block-menu-menu-visitor-menu,
+	#block-system-main-menu  {
+	//	background-color: 		#f2f2f2;
+		padding:				0;
+		margin:					0;
+	}
+
+
+/* ** *****   Main Site Navigation Menu  ***** **  
+        *
+        * Menu is Flexbox as apposed to prior Divs
+*/
+
+    #block-system-user-menu,
+    #block-system-main-menu {
+	    max-width:				85%;  			// for 4 or 5 menu items
+	    margin:     			0 auto;  		//center
+	    	    
+	    h2 {
+		    display:  			none;
+	    }
+	    
+	    ul.menu  {
+		    display: 	-webkit-flex;
+		    display:        -ms-flexbox;
+		    display:         	flex;
+				                             
+		    -webkit-flex-direction:     row;
+		        -ms-flex-direction:     row;
+		            flex-direction:     row;
+		    -webkit-flex-wrap:          nowrap;
+		        -ms-flex-wrap:          nowrap;
+		            flex-wrap:          nowrap;
+		    -webkit-justify-content:    space-around;
+		        -ms-flex-pack:          justify;
+		            justify-content:    space-around;
+		    margin:						0.3em 0 0 0;
+		    padding:					0
+	    }
+	    ul li     {
+		    -webkit-flex:              1 1 0;
+		        -ms-flex:              1 1 0;
+		            flex:              1 1 0;
+		
+		    -webkit-order:             1;
+		        -ms-flex-order:        1;
+		            order:             1;
+		            
+		    background-color: 			none;
+			border:						none;
+			color:   					$color-menu-text;
+			font-family:				$font-main-menu;
+			font-weight:  				400;
+			font-size:  				1.1em; 
+			margin:       				0 0 .5ex;
+			text-transform:				none;
+			text-align: 				center;
+			height:						30px;
+			line-height:   				30px;
+			list-style: 				none;
+			position:					relative;  //  needed for pseudo after to center
+
+	    }
+	    ul li.active-trail:after    {	//  caret indicator for active menu
+			content:					"";
+			border-color: 				transparent transparent $color-body-bg  transparent;
+			border-style:				solid;
+			border-width: 				7px;
+			width: 						auto;
+			height: 					7px;
+			position: 					absolute;
+			bottom: 	   				-8px;
+			margin: 					0 0 0 -5px;
+			left: 						50%;
+		}
+		ul li a {
+		   color:               		inherit;
+		}
+		.l-region--navigation nav    ul li:hover a   {
+		   color:   					darken($color-menu-text,20%);
+		}
+
+
+    }
+    
+    #block-system-user-menu {
+	    position: 						absolute; 
+		top: 							0;
+		left: 						   -6%;
+		
+		ul li ul {
+			visibility: 				hidden;
+		}
+		
+		&:hover {
+			ul li ul {
+				visibility: 			visible;
+			}
+		}
+    }
+    
+    
+    /*
+	.l-region--navigation nav    ul     {
+	   font-weight:			100;
+	   display:  			inline-block;
+	   height:				30px;
+	   font-size:  			1em;
+	   background-color: 	none;
+	   border:				none; 
+	   color:   			$color-menu-text;
+	   text-transform:		none;
+	   line-height:   		30px;
+	   margin:				0;
+	}
+	.l-region--navigation nav   ul li {
+	   background-color: 	none;
+		display:  			inline-block;
+		margin:  			.5ex 15px .5ex 15px;
+		padding:  			2px 1.1em 0;
+		font-family:  		$font-body-text;
+		font-weight:  		normal;
+	   -webkit-border-radius: 6px;
+	   -moz-border-radius: 	6px;
+	   -ms-border-radius: 	6px;
+	   -o-border-radius: 	6px;
+	   border-radius: 		6px;   
+	}
+	
+	.l-region--navigation nav   ul li:first-child {
+		margin:  			.4ex 15px .4ex 4px;
+	}
+	.l-region--navigation nav   ul li:last-child {
+		margin:  			.4ex 0 .4ex 10px;
+	}
+	.l-region--navigation nav    ul li:hover    {
+	   background-color: 	none;
+	   color:   			$color-menu-text;
+	}
+	.l-region--navigation nav    ul li.active-trail:after    {
+		content:"";
+		border-color: 	transparent transparent #f1f1f1  transparent;
+		border-style:	solid;
+		border-width: 	5px;
+		width: 			auto;
+		height: 		5px;
+		position: 		absolute;
+		bottom: 	   -5px;
+		left: 			4.5em;
+	}
+
+	.l-region--navigation nav    ul li:nth-child(2).active-trail:after    {
+		left: 			12.9em;
+	}
+
+	.l-region--navigation nav    ul li:nth-child(3).active-trail:after    {
+		left: 			calc((100% / 1.2));
+	}
+       
+	
+	.l-region--navigation nav   ul li a {
+	   text-decoration: 	none;
+	   color:               inherit;
+	}
+	*/

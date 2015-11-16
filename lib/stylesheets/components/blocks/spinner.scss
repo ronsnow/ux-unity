@@ -1,0 +1,90 @@
+$spinner-duration: 4s;
+$spinner-size: 1.4em;
+$spinner-thickness: 10%;
+
+@function spinner-tip($color) {
+	@return prefixed-radial-gradients(circle, closest-side, center (100%-$spinner-thickness/2), $color 100%, transparent 101%);
+}
+@mixin spinner-line($color) {
+	$inner-radius: 100% - 2*$spinner-thickness;
+	$index: 1;
+	$spinner-tip: spinner-tip($color);
+	@each $gradient in prefixed-radial-gradients(circle, closest-side, center, transparent $inner-radius, $color $inner-radius) {
+		background: $gradient border-box content-box, nth($spinner-tip, $index) border-box;
+		$index: $index + 1;
+	}
+}
+
+/* Timing function */
+/* We just do a perfectly symmetric ease-in-out, based on one parameter */
+$spinner-ease: 0.6;
+$spinner-bezier: $spinner-ease, 0, 1-$spinner-ease, 1;
+$spinner-bezier-first-half: $spinner-ease, 0, (1+$spinner-ease)/2, 0.5;
+$spinner-bezier-second-half: (1-$spinner-ease)/2, 0.5, 1-$spinner-ease, 1;
+
+.clr-spinner {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	box-sizing: border-box;
+	width: $spinner-size;
+	height: $spinner-size;
+	border-left: ($spinner-size/2) solid transparent;
+	overflow: hidden;
+	@each $gradient in spinner-tip($color-spinner-tip) {
+		background: $gradient border-box;
+	}
+	-webkit-transform-origin: center;
+	transform-origin: center;
+	@include animation(outer-spin $spinner-duration infinite);
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: -100%;
+		height: 100%;
+		width: 200%;
+		padding-right: 100%;
+		box-sizing: border-box;
+		border-radius: 50%;
+		@include spinner-line($color-spinner-tip);
+		-webkit-transform-origin: center;
+		transform-origin: center;
+		@include animation(inner-spin $spinner-duration infinite);
+	}
+
+	&.clr-inverted {
+		@each $gradient in spinner-tip($color-button-text-inverted) {
+			background: $gradient border-box;
+		}
+
+		&::before {
+			@include spinner-line($color-button-text-inverted);
+		}
+	}
+}
+
+@include keyframes(outer-spin) {
+	0% {
+		@include animation-timing-function(cubic-bezier($spinner-bezier));
+		@include transform(rotate(0deg));
+	}
+	50% {
+		@include animation-timing-function(cubic-bezier($spinner-bezier));
+		@include transform(rotate(540deg));
+	}
+	100% {
+		@include transform(rotate(1080deg));
+	}
+}
+
+@include keyframes(inner-spin) {
+	0%, 50%, 100% {
+		@include animation-timing-function(cubic-bezier($spinner-bezier-first-half));
+		@include transform(rotate(0deg));
+	}
+	25%, 75% {
+		@include animation-timing-function(cubic-bezier($spinner-bezier-second-half));
+		@include transform(rotate(-165deg));
+	}
+}

@@ -1,0 +1,33 @@
+// Include the variables.
+@import "partials/utility/**/*";
+
+
+/*  ****  Search Box                 ****  */
+
+#overlay-content {
+	padding-left: 	7em;
+	width: 			1104px;
+}
+body#tinymce {
+	background: none;
+}
+
+.page-node-edit {
+	#main-content {
+		width: 		90% !important;
+	}
+	h1 {
+		position:   relative;
+		top:		0;
+	}
+	input#edit-field-additional-keyword-tags-und {
+		width: 		220px;
+	}
+}
+
+form.node-form .fieldset-wrapper .field-type-taxonomy-term-reference {
+	width: 			30%;
+	padding-right:	3%;
+	display: 		inline-block;
+	vertical-align: top;
+}

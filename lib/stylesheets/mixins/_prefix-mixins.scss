@@ -1,0 +1,158 @@
+/**
+ * A list of useful mixins for properties that need to be prefixed for various browsers.
+ * Feel free to add as many as you need.
+ */
+
+/*** Flexbox ***/
+
+@mixin display-flex($direction) {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: $direction;
+	    -ms-flex-direction: $direction;
+	        flex-direction: $direction;
+}
+
+@mixin align-items($align) {
+	// Damn you IE.
+	@if $align == flex-start {
+		 -ms-flex-align: start;
+	} @else if $align == flex-end {
+		 -ms-flex-align: end;
+	} @else {
+		 -ms-flex-align: $align;
+	}
+	-webkit-align-items: $align;
+	        align-items: $align;
+}
+
+@mixin justify-content($justify) {
+	// Damn you IE.
+	@if $justify == flex-start {
+		 -ms-flex-pack: start;
+	} @else if $justify == flex-end {
+		 -ms-flex-pack: end;
+	} @else if $justify == space-between {
+		 -ms-flex-pack: justify;
+	} @else if $justify == space-around {
+		 -ms-flex-pack: distribute;
+	} @else {
+		 -ms-flex-pack: $justify;
+	}
+	-webkit-justify-content: $justify;
+	        justify-content: $justify;
+}
+
+@mixin flex($grow: 0, $shrink: 1, $basis: auto) {
+	-webkit-flex: $grow $shrink $basis;
+	    -ms-flex: $grow $shrink $basis;
+	        flex: $grow $shrink $basis;
+}
+
+@mixin align-self($align) {
+	// Damn you IE.
+	@if $align == flex-start {
+		-ms-flex-item-align: start;
+	} @else if $align == flex-end {
+		-ms-flex-item-align: end;
+	} @else {
+		-ms-flex-item-align: $align;
+	}
+	-webkit-align-self: $align;
+	        align-self: $align;
+}
+
+@mixin order($position) {
+	  -webkit-order: $position;
+	 -ms-flex-order: $position;
+	          order: $position;
+}
+
+
+/*** Gradients ***/
+
+@mixin linear-gradient($angle, $fromColor, $toColor) {
+	/* Apparently every recent browser supports the new syntax, including IE 10+ */
+	background: linear-gradient($angle, $fromColor, $toColor);
+}
+
+@function prefixed-radial-gradients($shape, $size, $position, $color-stops...) {
+	@return
+		-webkit-radial-gradient($position, $shape $size, $color-stops),
+		   -moz-radial-gradient($position, $shape $size, $color-stops),
+		    -ms-radial-gradient($shape $size at $position, $color-stops),
+	         -o-radial-gradient($position, $shape $size, $color-stops),
+		        radial-gradient($shape $size at $position, $color-stops);
+}
+
+@mixin radial-gradient($shape, $size, $position, $fromColor, $toColor) {
+	background: mix(nth($fromColor, 1), nth($toColor, 1)); /* Fallback Color for IE9- */
+	@each $gradient in prefixed-radial-gradients($shape, $size, $position, $fromColor, $toColor) {
+		background: $gradient;
+	}
+}
+
+/*** Transitions ***/
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	transition: $transition;
+}
+
+@mixin transition-property($property) {
+	-webkit-transition-property: $property;
+	        transition-property: $property;
+}
+
+@mixin transition-duration($duration) {
+	-webkit-transition-duration: $duration;
+	        transition-duration: $duration;
+}
+
+@mixin transition-timing-function($timing-function) {
+	-webkit-transition-timing-function: $timing-function;
+	        transition-timing-function: $timing-function;
+}
+
+@mixin transition-delay($delay) {
+	-webkit-transition-delay: $delay;
+	        transition-delay: $delay;
+}
+
+/*** Animations ***/
+
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+@mixin animation($animations...) {
+	-webkit-animation: $animations;
+	        animation: $animations;
+}
+
+@mixin animation-timing-function($timing-function) {
+	-webkit-animation-timing-function: $timing-function;
+	        animation-timing-function: $timing-function;
+}
+
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	        transform: $transform;
+}
+
+@mixin translate3d($coordinates...) {
+	-webkit-transform: translate3d($coordinates);
+	        transform: translate3d($coordinates);
+}
+
+@mixin opacity($percentOpaque) {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$percentOpaque})";
+        filter: alpha(opacity=$percentOpaque);
+       opacity: ($percentOpaque/100);
+}

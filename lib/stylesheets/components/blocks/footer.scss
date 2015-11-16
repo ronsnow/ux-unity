@@ -1,0 +1,76 @@
+// Include the variables.
+@import "../../../partials/utility/variables/*"; 
+
+
+
+/* ==========  Lowest footer - copyright  =========== */
+	.l-region--footer {
+		left: 		0;
+		text-align: center;
+		width: 		100%;
+		position: 	fixed;
+		bottom: 	0;
+		left:		0;
+		background: #EBEFF1;
+		z-index:    99;
+		
+		
+		.page-footer-nav   {
+			text-align: 	center;
+			margin: 		0 auto;
+			min-width: 		47rem;
+			max-width:      $max-width;
+			width: 			calc($max-width * 75%);
+		}
+		
+		.page-footer-nav ul {
+			display:       -webkit-flex;
+			display:           -ms-flexbox;
+			display:            -o-flex;
+			display:               flex;
+			-webkit-justify-content:    space-between;
+                -ms-flex-pack:          justify;
+                    justify-content:    space-between;
+			padding:		0;
+			height: 		auto;
+			margin:         0;
+		}
+
+		.page-footer-nav ul li {
+			text-align:   	center;
+			padding:      	0.3em 0  0.2em 0;
+			margin-right: 	0;
+		      -webkit-flex: 1 1 auto;
+                  -ms-flex: 1 1 auto;
+                      flex: 1 1 auto;
+		}
+		
+		.page-footer-nav ul li a {
+			color:     		#7A8793;
+			font-size:		0.8em;
+		}
+		.page-footer-nav ul li a:hover {
+			color:     		$color-hover;
+		}
+
+	}
+
+
+	
+	
+	/*  *****  Media Queries for Footer  *****  */
+	
+	/* phones in  portrait   ----------- 
+	@media only screen 
+		and (max-width : 768px) {
+
+		.l-region--footer     {
+			font-size:	.8em;
+		}
+		#footer-links-wrapper .ul-block {
+			border-right:		none;
+			width: 				48%;
+		}
+
+    } 
+    */

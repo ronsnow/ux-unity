@@ -1,0 +1,28 @@
+/*** Lists ***/
+
+ul {
+	margin:         	0;
+	padding: 			0;
+}
+li {
+	list-style-type: 	none;
+	margin: 			0;
+	padding: 			0;
+}
+
+.ux-unstyled {
+	list-style-type: 	none;
+	margin: 			0;
+	padding: 			0;
+}
+
+dl {
+	dd {
+		margin: 		0;
+		font-weight: 	600;
+	}
+
+	dt {
+		margin: 		0 0 rem(1) rem(2);
+	}
+}

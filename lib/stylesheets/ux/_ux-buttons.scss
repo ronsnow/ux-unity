@@ -1,0 +1,156 @@
+// Include the variables.
+@import "../../utility/variables/*";
+
+
+
+
+
+
+fieldset.ux-radio-grp { 
+    width:     				40%; 
+    min-width: 				20em; 
+	.ux-radio  {   // provides for custom radio element, instead of native
+		display:			block;
+		margin-bottom: 		1em;
+		position: 			relative;
+		padding-left: 		1.8em;
+		text-indent:  		-1.4em;
+		font-family: 		$font-family-default;
+		font-weight: 		300;
+		font-size: 			1em;
+		margin-top: 		-1px;
+		min-height: 		1.13em;
+		text-align: 		left;
+		
+		> input {
+			margin-right:   0.8em;
+		}
+	
+		> label::before {
+			opacity: 		0;
+			cursor: 		pointer;
+			position: 		absolute;
+			content: 		'';
+			width: 			1em;
+			height: 		1em;
+			left: 			0;
+			top: 			0;
+			background: 	#fbfaf9;
+			box-shadow: 	inset 0px 0px 2px 0px $color-separator-line;
+			border: 		1px solid $color-separator-line;
+			border-radius:  49%;
+		}
+		&::hover > label::before   {
+			box-shadow: 	0 0 0 4px #fff inset;
+			background: 	$color-separator-line;
+		}
+		
+	}
+}
+
+/*  Temporary mock up -- Needs to be setup properly  */
+
+	ul.ux-button-group.round.toggle  {
+		margin-left: auto;
+		margin-right: auto;
+		
+		> * > .button {
+			-webkit-border-radius:	0;
+			        border-radius:	0;
+			padding: 				6px  22.5px;
+			border: 				#eee thin solid;
+			box-shadow: 			0 2px 0 0 #e6e6e6;
+		}
+
+		> *:first-child > .button {
+			-webkit-border-bottom-left-radius: 5px;
+			-webkit-border-top-left-radius:    5px;
+			        border-bottom-left-radius: 5px;
+			        border-top-left-radius:    5px;
+		}
+
+		> *:last-child > .button {
+			-webkit-border-bottom-right-radius: 5px;
+			-webkit-border-top-right-radius:    5px;
+			        border-bottom-right-radius: 5px;
+			        border-top-right-radius:    5px;
+		}
+		
+		li   {
+			list-style: 		none;
+			display:    		inline-block;
+			text-indent: 		-5px;
+			margin: 			0;
+			padding:			0;
+		}
+		input[data-toggle] {
+		  display: 				none;
+		}
+		
+		input[data-toggle]:checked + label,
+		input[data-toggle]:checked + label:active {
+		  background-color:  	$color-selected-state;
+		  box-shadow: 			0 2px 4px rgba(0, 0, 0, 0.15) inset, 
+		              			0 1px 2px rgba(0, 0, 0, 0.05);
+		}
+		
+		.button-group.toggle {
+		  li:not(first-child) {
+		    margin: 0 -0.9rem;
+		  }
+		}
+	}
+	
+	/**
+ * Button elements and elements that have the "button" class are styled.
+ * Possible additional classes to change the color:
+ *     - clr-primary
+ *     - clr-error
+ *     - clr-success
+ */
+
+$button-shadow-height: 3px;
+
+button, 
+.ux-button {
+	padding: 		rem(0.8) rem(1.5);
+	outline: 		none;
+	border-radius:	3px;
+	font-family: 	$font-family-default;
+	font-weight: 	400;
+	font-size: 		rem(0.8);
+	text-transform: uppercase;
+	cursor: 		pointer;
+
+	@include button-color($color-button-default);
+
+	&.ux-primary {
+		@include button-color($color-button-primary);
+	}
+	&.ux-info {
+		@include button-color($color-info);
+	}
+	&.ux-warn {
+		@include button-color($color-warn);
+	}
+
+	&.ux-error {
+		@include button-color($color-error);
+	}
+
+	&.ux-success {
+		@include button-color($color-success);
+	}
+
+	&:active:not(.disabled) {
+		position: 	relative;
+		top: 		$button-shadow-height;
+		box-shadow: none;
+	}
+
+	&:disabled, &.disabled {
+		opacity: 	0.4;
+		cursor: 	default;
+	}
+
+}
